@@ -7,5 +7,6 @@ target 'TO Do List' do
 
   # Pods for TO Do List
 pod 'RealmSwift'
+pod 'ProgressHUD'
 
 end

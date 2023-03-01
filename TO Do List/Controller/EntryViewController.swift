@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import ProgressHUD
 class EntryViewController: UIViewController {
     
     
@@ -45,12 +46,14 @@ class EntryViewController: UIViewController {
             try! realm.commitWrite()
             
             complitionHendler?()
-            navigationController?.popViewController(animated: true)
-            
+            ProgressHUD.showSucceed( "List added successfully")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2 ){
+                self.navigationController?.popViewController(animated: true)
+    }
             
         }
         else{
-            print("has no data")
+            ProgressHUD.showError("Has no data, Please enter data")
         }
     }
     

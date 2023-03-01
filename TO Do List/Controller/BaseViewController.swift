@@ -96,7 +96,6 @@ extension BaseViewController : UITableViewDelegate , UITableViewDataSource {
             self.myTasks.remove(at:indexPath.row)
             self.tableView.beginUpdates()
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
-    
             self.tableView.endUpdates()
             completionHendler(true)
             
